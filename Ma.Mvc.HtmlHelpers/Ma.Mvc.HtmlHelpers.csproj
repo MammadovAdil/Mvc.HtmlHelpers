@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8A0E7FC2-7309-4027-B0CB-996F73A63BFE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ma.Mvc.HtmlHelpers</RootNamespace>
+    <AssemblyName>Ma.Mvc.HtmlHelpers</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helpers\ListEditorFor\Abstract\IActionBuilder.cs" />
+    <Compile Include="Helpers\ListEditorFor\Abstract\IListEditorAction.cs" />
+    <Compile Include="Helpers\ListEditorFor\Abstract\IListEditorActionCore.cs" />
+    <Compile Include="Helpers\ListEditorFor\Abstract\IListEditorItemAction.cs" />
+    <Compile Include="Helpers\ListEditorFor\Abstract\IListEditorListAction.cs" />
+    <Compile Include="Helpers\ListEditorFor\Concrete\ActionBuilder.cs" />
+    <Compile Include="Helpers\ListEditorFor\Concrete\ListEditorAction.cs" />
+    <Compile Include="Helpers\TreeViewHelpers.cs" />
+    <Compile Include="Helpers\UrlHelpers.cs" />
+    <Compile Include="Helpers\PartialViewHelpers.cs" />
+    <Compile Include="Helpers\SecureForm.cs" />
+    <Compile Include="Helpers\CollectionBindingHelpers.cs" />
+    <Compile Include="Helpers\DateTimeHelpers.cs" />
+    <Compile Include="Helpers\ListEditorFor\Abstract\IFieldBuilder.cs" />
+    <Compile Include="Helpers\ListEditorFor\Concrete\ClientListEditorBuilder.cs" />
+    <Compile Include="Helpers\ListEditorFor\Concrete\Field.cs" />
+    <Compile Include="Helpers\ListEditorFor\Concrete\FieldBuilder.cs" />
+    <Compile Include="Helpers\ListEditorFor\Abstract\IClientListEditorBuilder.cs" />
+    <Compile Include="Helpers\ListEditorFor\Abstract\IField.cs" />
+    <Compile Include="Helpers\ListEditorFor\Abstract\IFieldCore.cs" />
+    <Compile Include="Helpers\ListEditorFor\Abstract\IHiddenField.cs" />
+    <Compile Include="Helpers\ListEditorFor\Abstract\IListEditorBuilder.cs" />
+    <Compile Include="Helpers\ListEditorFor\Abstract\ISelectField.cs" />
+    <Compile Include="Helpers\ListEditorFor\Abstract\IServerListEditorBuilder.cs" />
+    <Compile Include="Helpers\ListEditorFor\Concrete\ListEditorBuilder.cs" />
+    <Compile Include="Helpers\ListEditorFor\Concrete\ServerListEditorBuilder.cs" />
+    <Compile Include="Helpers\ListEditorHelpers.cs" />
+    <Compile Include="Helpers\ListHelpers.cs" />
+    <Compile Include="Helpers\PagingSortingHelpers.cs" />
+    <Compile Include="Helpers\SortingControlFor\Abstract\ISortingControlBuilder.cs" />
+    <Compile Include="Helpers\SortingControlFor\Abstract\ISortingField.cs" />
+    <Compile Include="Helpers\SortingControlFor\Abstract\ISortingFieldBuilder.cs" />
+    <Compile Include="Helpers\SortingControlFor\Abstract\ISortingFieldCore.cs" />
+    <Compile Include="Helpers\SortingControlFor\Concrete\SortingControlBuilder.cs" />
+    <Compile Include="Helpers\SortingControlFor\Concrete\SortingField.cs" />
+    <Compile Include="Helpers\SortingControlFor\Concrete\SortingFieldBuilder.cs" />
+    <Compile Include="Infrastructure\FluentTagBuilder.cs" />
+    <Compile Include="Models\Enums\EditorType.cs" />
+    <Compile Include="Models\Enums\ListEditorActionType.cs" />
+    <Compile Include="Models\Enums\ListEditorBuilderType.cs" />
+    <Compile Include="Models\PagingInfo.cs" />
+    <Compile Include="Models\SortingInfo.cs" />
+    <Compile Include="Models\TreeViewSource.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Widgets\ma-mvc-html-helper-widgets.css" />
+    <Content Include="Scripts\Validators\jquery.validate.unobtrusive.extender.js" />
+    <Content Include="Scripts\Widgets\ma.mvc.html-helpers.widgets.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Infrastructure\Abstract\" />
+    <Folder Include="Infrastructure\Concrete\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
