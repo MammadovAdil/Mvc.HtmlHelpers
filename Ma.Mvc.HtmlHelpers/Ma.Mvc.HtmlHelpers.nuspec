@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Ma.Mvc.HtmlHelpers</id>
-    <version>1.0.0</version>
+    <version>$version$</version>
     <title>Ma.Mvc.HtmlHelpers</title>
     <authors>MammadovAdil</authors>
     <owners>MammadovAdil</owners>
@@ -11,8 +11,7 @@
     <iconUrl>https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/code-128.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>
-      A lot of HtmlHelpers to decrease code repetition on Views and increase productivity. 
-      Especially ListEditorFor is highly customizable and can help you generate productive views.
+      1. Added number method to validator script.
     </description>
     <releaseNotes>First release.</releaseNotes>
     <copyright>Copyright 2017</copyright>
@@ -25,11 +24,4 @@
       <dependency id="Microsoft.Web.Infrastructure" version="1.0.0" />
     </dependencies>
   </metadata>
-
-  <files>
-    <file src="Scripts\Validators\jquery.validate.unobtrusive.extender.js" target="Content\Scripts\HtmlHelpers" />
-    <file src="Scripts\Widgets\ma.mvc.html-helpers.widgets.js" target="Content\Scripts\HtmlHelpers" />
-
-    <file src="Content\Widgets\ma-mvc-html-helper-widgets.css" target="Content\Content\HtmlHelpers" />
-  </files>
 </package>
