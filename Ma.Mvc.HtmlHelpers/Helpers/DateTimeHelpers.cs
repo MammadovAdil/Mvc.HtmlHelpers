@@ -286,7 +286,7 @@ namespace Ma.Mvc.HtmlHelpers.Helpers
             // Get model metadata
             ModelMetadata metadata = ModelMetadata.FromLambdaExpression(
                 expression,
-                htmlHelper.ViewData);  
+                htmlHelper.ViewData);
 
             string modelName = ExpressionHelper.GetExpressionText(expression);
 
@@ -335,20 +335,30 @@ namespace Ma.Mvc.HtmlHelpers.Helpers
             // Select day property of date
             // Initialize model to  be able to create drop downs
             bool isModelNull = false;
-            if(metadata.Model == null)
+            if (metadata.Model == null)
             {
-                DateTime? modelValue = new Nullable<DateTime>(new DateTime());
-                MethodInfo setMethod = typeof(TModel).GetProperty(modelName).GetSetMethod();
-                Action<TModel, DateTime?> setter = (Action<TModel, DateTime?>)Delegate
-                    .CreateDelegate(typeof(Action<TModel, DateTime?>), setMethod);
+                var splitedProps = modelName.Split('.');
+                object model = htmlHelper.ViewData.Model;
 
-                setter(htmlHelper.ViewData.Model, modelValue);
+                for (byte i = 0; i < splitedProps.Length; i++)
+                {
+                    var propInfo = model.GetType().GetProperty(splitedProps[i]);
+                    object value = null;
+
+                    if (i == splitedProps.Length - 1)
+                        value = new Nullable<DateTime>(new DateTime());
+                    else
+                        value = Activator.CreateInstance(propInfo.PropertyType);
+
+                    propInfo.SetValue(model, value);
+                    model = value;
+                }
 
                 // Set flag to true
                 isModelNull = true;
             }
 
-            MemberExpression valueAccess = Expression.Property(expression.Body, "Value");            
+            MemberExpression valueAccess = Expression.Property(expression.Body, "Value");
             MemberExpression dayExpression = Expression.Property(valueAccess, "Day");
             datePropertySelector = Expression.Lambda<Func<TModel, Int32>>(
                 dayExpression,
