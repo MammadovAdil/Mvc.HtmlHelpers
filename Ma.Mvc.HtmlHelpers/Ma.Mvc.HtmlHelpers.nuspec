@@ -11,9 +11,12 @@
     <iconUrl>https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/code-128.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>
-      1. Added number method to validator script.
+      A lot of HtmlHelpers to decrease code repetition on Views and increase productivity. 
+      Especially ListEditorFor is highly customizable and can help you generate productive views.
     </description>
-    <releaseNotes>First release.</releaseNotes>
+    <releaseNotes>
+      1. Fixed issue with DateTime properties inside complex models for DateTime helper.
+    </releaseNotes>
     <copyright>Copyright 2017</copyright>
     <tags>Mvc Html Web HtmlHelper Helper</tags>
 
